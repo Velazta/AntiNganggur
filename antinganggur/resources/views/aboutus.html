@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - AntiNganggur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fff7f5;
+            /* Warna latar belakang utama halaman (soft peach/pink) */
+            color: #374151;
+            /* Default text color (gray-700) */
+        }
+
+        .bg-orange-custom {
+            background-color: #FF6B35;
+            /* Main orange color */
+        }
+
+        /* This wrapper ensures all content inside the section is above the ::after pseudo-element */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive adjustments for the curve */
+        @media (max-width: 1024px) {
+
+            /* lg breakpoint */
+            .custom-curved-container {
+                border-bottom-right-radius: 150px;
+            }
+
+            .custom-curved-container::after {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* md breakpoint */
+            .custom-curved-container {
+                border-bottom-right-radius: 100px;
+            }
+
+            .custom-curved-container::after {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .title-what-we-do {
+            background-color: #f97316;
+            /* orange-500 */
+            color: white;
+            padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+            /* Tambah padding kanan agar teks tidak terlalu dekat */
+            display: inline-block;
+            position: relative;
+            border-radius: 0.375rem 0 0 0.375rem;
+            /* rounded kiri */
+        }
+
+        /* Membuat panah lancip miring ke kanan */
+        .title-what-we-do {
+            position: relative;
+            display: inline-block;
+            background-color: #FF6B35;
+            /* Warna oranye */
+            color: white;
+            font-weight: 800;
+            /* sesuaikan dengan bold/extrabold */
+            font-size: 2.5rem;
+            /* contoh ukuran, sesuaikan */
+            padding: 0.75rem 2rem 0.75rem 2rem;
+            /* ruang dalam teks */
+            border-radius: 8px;
+            /* sudut membulat pada kotak */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Ekor lancip di bawah */
+        .title-what-we-do::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            /* sesuaikan jarak ke bawah */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            /* lebar sisi miring kiri */
+            border-right: 20px solid transparent;
+            /* lebar sisi miring kanan */
+            border-top: 20px solid #FF6B35;
+            /* warna panah */
+            filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.15));
+            /* shadow lembut */
+        }
+
+        /* Garis bawah dekoratif untuk Visi & Misi */
+        .underline-decorator {
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #f97316;
+            /* orange-500 */
+            margin-top: 0.75rem;
+            /* mb-3 */
+            margin-left: auto;
+            /* Untuk Visi jika teksnya rata kanan */
+            margin-right: auto;
+            /* Untuk Visi jika teksnya rata tengah */
+        }
+
+        .visi-card .underline-decorator {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        /* Rata kiri untuk Visi */
+        .misi-card .underline-decorator {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        /* Rata kiri untuk Misi */
+
+        /* Efek untuk kartu tim */
+        .team-card-image-wrapper {
+            position: relative;
+            padding: 0.5rem;
+            /* space for the pseudo-element to show */
+        }
+
+        .team-card-image-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #f97316;
+            /* orange-500 */
+            border-radius: 0.75rem;
+            /* rounded-xl */
+            transform: skewY(-5deg);
+            transition: transform 0.3s ease-in-out;
+            z-index: 0;
+        }
+
+        .team-card-image-wrapper:hover::before {
+            transform: skewY(0deg);
+        }
+
+        .team-card-image-wrapper img {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-card-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Latar belakang dan overlay untuk section "Why Choose Us" */
+        .why-choose-us-bg {
+            /* Ganti dengan path gambar Anda yang sebenarnya */
+            background-image: url("../assets/section6-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .why-choose-us-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(20,
+                    20,
+                    40,
+                    0.7);
+            /* Overlay lebih gelap agar teks putih lebih kontras */
+            z-index: 1;
+        }
+
+        .why-choose-us-content {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- ===== Header Mulai ===== -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <!-- Pastikan path ke logo benar -->
+                        <img class="h-8 sm:h-9 w-auto" src="../assets/Vector.png" alt="AntiNganggur Logo" />
+                        <div class="ml-2">
+                            <span class="font-bold text-lg sm:text-xl text-slate-800">Anti</span><span
+                                class="font-bold text-lg sm:text-xl text-orange-500">Nganggur</span>
+                        </div>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center space-x-2 lg:space-x-4">
+                    <a href="index.html"
+                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Home</a>
+                    <a href="#"
+                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Lowongan</a>
+                    <a href="aboutus.html"
+                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Tentang</a>
+                    <a href="#"
+                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Portfolio</a>
+                    <a href="#"
+                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Kontak</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <a href="login.html"
+                        class="ml-6 inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-orange-500 text-[15px] font-semibold rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-200 ease-in-out shadow-sm">
+                        Masuk
+                    </a>
+                </div>
+                <!-- Tombol Mobile Menu -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-orange-500 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Buka menu utama</span>
+                        <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                        <svg id="menu-icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#"
+                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#"
+                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Lowongan</a>
+                <a href="#"
+                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
+                <a href="#"
+                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="#"
+                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="px-5">
+                    <a href="login.html"
+                        class="block w-full text-center px-5 py-2.5 border-2 border-orange-500 text-base font-semibold rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-200 ease-in-out">
+                        Masuk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ===== Header Selesai ===== -->
+    <main>
+        <!-- Add a wrapper div to provide padding around the section, revealing the page background -->
+        <div class="p-4 sm:pt-6 sm:pb-6 md:px-8 md:pt-0">
+            <section class="bg-orange-custom pt-16 md:pt-20 lg:pt-24 pb-20 overflow-hidden rounded-3xl">
+                <!-- This inner div ensures content is stacked above the ::after pseudo-element -->
+                <div class="content-wrapper max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                    <div class="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-start">
+                        <div class="lg:col-span-7 xl:col-span-6 flex flex-col justify-start py-10">
+                            <h1
+                                class="text-white font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 tracking-tight">
+                                <span class="block">Selamat</span>
+                                <span class="block">Datang Di</span>
+                                <span class="block">Perusahaan</span>
+                                <span class="block">Kami</span>
+                            </h1>
+                            <div class="mt-8 lg:mt-12 max-w-[420px] relative">
+                                <!-- Make sure your image path is correct -->
+                                <img src="../assets/IlusLatarBelakang.png" alt="Tim Perusahaan AntiNganggur"
+                                    class="w-full h-auto rounded-lg shadow-xl" />
+                            </div>
+                        </div>
+                        <div
+                            class="lg:col-span-5 xl:col-span-6 text-white text-base sm:text-lg leading-relaxed space-y-6 mt-12 lg:mt-0 py-10">
+                            <p>
+                                AntiNganggur didirikan pada tahun 2020 oleh sekelompok profesional IT yang melihat
+                                adanya
+                                kesenjangan antara kebutuhan industri dan keterampilan lulusan teknologi di Indonesia.
+                            </p>
+                            <p>
+                                Berawal dari komunitas kecil yang berbagi pengetahuan secara online, kami berkembang
+                                menjadi
+                                platform komprehensif yang menghubungkan talenta IT dengan peluang karir dan
+                                pembelajaran
+                                yang relevan dengan kebutuhan industri.
+                            </p>
+                            <p>
+                                Saat ini, AntiNganggur telah membantu lebih dari 5.000 profesional IT menemukan
+                                pekerjaan
+                                impian mereka dan membekali lebih dari 15.000 pembelajar dengan keterampilan digital
+                                yang
+                                dibutuhkan di era modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- Section 2 What We Do -->
+        <section class="py-16 md:py-20 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16 items-start">
+                    <div class="lg:col-span-6 xl:col-span-5 mb-10 lg:mb-0 flex flex-col">
+                        <div class="mb-6 md:mb-8">
+                            <h2 class="title-what-we-do text-2xl sm:text-3xl lg:text-4xl !leading-tight">
+                                What We Do
+                            </h2>
+                        </div>
+                        <p class="text-base md:text-lg text-slate-600 leading-relaxed text-justify flex-grow">
+                            AntiNganggur.id didirikan untuk menjadi solusi digital dalam mengatasi permasalahan
+                            pengangguran di sektor IT.
+                            Kami menyediakan platform yang menghubungkan perusahaan dengan kandidat berkualitas,
+                            menawarkan informasi yang akurat dan relevan tentang lowongan pekerjaan serta profil
+                            perusahaan.
+                            Dengan pendekatan yang proaktif, kami berkomitmen untuk memberdayakan pencari kerja dan
+                            membantu mereka menemukan peluang karir yang tepat.
+                            Hingga saat ini, AntiNganggur.id telah menjembatani ribuan profesional IT dengan peluang
+                            kerja yang sesuai, berkontribusi pada pertumbuhan industri teknologi informasi di Indonesia.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6 xl:col-span-7">
+                        <div class="w-full rounded-lg overflow-hidden shadow-xl">
+                            <img src="../assets/WhatWeDoIlus.png" alt="Proses Bisnis AntiNganggur"
+                                class="w-100 h-100 object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 Visi Misi -->
+        <section class="pt-16 pb-20 md:pt-24 md:pb-32 lg:pb-40 lg:pt-40 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 md:mb-16">
+                    <div class="inline-block bg-orange-500 px-8 py-3 rounded-lg shadow-md mb-4">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-wide">
+                            VISI MISI
+                        </h2>
+                    </div>
+                    <p class="max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed">
+                        Kami berkomitmen untuk menciptakan dampak positif
+                        dalam ekosistem teknologi Indonesia
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Visi Card -->
+                    <div
+                        class="visi-card bg-white p-6 py-8 md:p-8 rounded-xl shadow-xl border border-orange-100 flex flex-col">
+                        <div class="mb-4">
+                            <div class="inline-flex items-center justify-center h-16 w-16 rounded-lg mb-10">
+                                <img src="../assets/BulbIcon.png" alt="Visi Icon" class="h-auto w-auto">
+                            </div>
+                            <h3 class="text-3xl font-bold text-orange-500">
+                                VISI
+                            </h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed text-justify">
+                            Menjadi katalisator utama dalam menciptakan
+                            ekosistem teknologi Indonesia yang inklusif,
+                            inovatif, dan berkelanjutan, di mana setiap
+                            talenta digital dapat berkembang dan
+                            berkontribusi pada kemajuan bangsa.
+                        </p>
+                        <span class="underline-decorator mt-4"></span>
+                    </div>
+
+                    <!-- Misi Card -->
+                    <div
+                        class="misi-card bg-white p-6 py-8 md:p-8 rounded-xl shadow-xl border border-orange-100 flex flex-col">
+                        <div class="mb-4">
+                            <div class="inline-flex items-center justify-center h-16 w-16 rounded-lg mb-10">
+                                <img src="../assets/BoltIcon.png" alt="Misi Icon" class="h-auto w-auto">
+                            </div>
+                            <h3 class="text-3xl font-bold text-orange-500">
+                                MISI
+                            </h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-600 leading-relaxed">
+                            <li class="flex items-start text-justify">
+                                <img src="../assets/FowardSign.png" alt="Checklist"
+                                    class="flex-shrink-0 h-5 w-5 text-orange-500 mt-1 mr-2.5">
+                                Menyediakan platform pembelajaran yang
+                                relevan dengan kebutuhan industri teknologi
+                                terkini.
+                            </li>
+                            <li class="flex items-start text-justify">
+                                <img src="../assets/FowardSign.png" alt="Checklist"
+                                    class="flex-shrink-0 h-5 w-5 text-orange-500 mt-1 mr-2.5">
+                                Menghubungkan talenta IT dengan perusahaan
+                                melalui platform karir yang inovatif.
+                            </li>
+                            <li class="flex items-start text-justify">
+                                <img src="../assets/FowardSign.png" alt="Checklist"
+                                    class="flex-shrink-0 h-5 w-5 text-orange-500 mt-1 mr-2.5">
+                                Membangun komunitas IT yang kuat untuk
+                                berbagi pengetahuan dan peluang.
+                            </li>
+                            <li class="flex items-start text-justify">
+                                <img src="../assets/FowardSign.png" alt="Checklist"
+                                    class="flex-shrink-0 h-5 w-5 text-orange-500 mt-1 mr-2.5">
+                                Berkontribusi aktif dalam pengembangan
+                                ekosistem digital Indonesia.
+                            </li>
+                        </ul>
+                        <span class="underline-decorator mt-4"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 kapabilitas -->
+        <section class="py-16 md:py-20 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16 lg:items-stretch">
+
+      <!-- Kolom gambar: buat flex agar tinggi mengikuti konten sebelah -->
+      <div class="lg:col-span-5 mb-10 lg:mb-0 flex items-stretch">
+        <div class="w-full rounded-lg overflow-hidden shadow-xl max-w-[650px]">
+          <img
+            src="../assets/CapabilityIlus.png"
+            alt="Kemampuan Kami"
+            class="w-full object-cover"
+            style="height: 100%;"
+          />
+        </div>
+      </div>
+
+      <!-- Kolom teks -->
+      <div class="lg:col-span-7 flex flex-col">
+        <div class="flex items-center mb-6 md:mb-8">
+          <span class="block h-10 md:h-[100px] w-3 bg-slate-900 mr-4"></span>
+          <h2 class="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] font-extrabold !leading-tight">
+            <span class="block text-orange-500">Our Capabilities</span>
+            <span class="block text-slate-900 mt-1">We Provide</span>
+          </h2>
+        </div>
+        <dl class="space-y-8 flex-grow">
+          <div>
+            <dt class="flex items-center">
+              <span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500">
+                <img src="../assets/Service.png" alt="Deskripsi Ikon Anda" class="h-8 w-8 object-contain" />
+              </span>
+              <p class="ml-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-orange-500">
+                Pengembangan Solusi IT Kustom
+              </p>
+            </dt>
+            <dd class="mt-2 ml-14 text-base text-slate-600 leading-relaxed">
+              Mengembangkan solusi perangkat lunak yang disesuaikan dengan kebutuhan spesifik klien, mulai dari aplikasi mobile hingga sistem manajemen data.
+            </dd>
+          </div>
+          <div>
+            <dt class="flex items-center">
+              <span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500">
+                <img src="../assets/CloudComputing.png" alt="Deskripsi Ikon Anda" class="h-8 w-8 object-contain" />
+              </span>
+              <p class="ml-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-orange-500">
+                Integrasi Teknologi Modern
+              </p>
+            </dt>
+            <dd class="mt-2 ml-14 text-base text-slate-600 leading-relaxed">
+              Kami mengintegrasikan teknologi modern seperti AI, Big Data, dan Cloud Computing untuk memberikan solusi yang efisien dan inovatif.
+            </dd>
+          </div>
+          <div>
+            <dt class="flex items-center">
+              <span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500">
+                <img src="../assets/SecurityShield.png" alt="Deskripsi Ikon Anda" class="h-8 w-8 object-contain" />
+              </span>
+              <p class="ml-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-orange-500">
+                Keamanan Cyber
+              </p>
+            </dt>
+            <dd class="mt-2 ml-14 text-base text-slate-600 leading-relaxed">
+              Kami menawarkan layanan keamanan siber yang komprehensif untuk melindungi data dan sistem informasi klien dari berbagai ancaman dan serangan digital.
+            </dd>
+          </div>
+          <div>
+            <dt class="flex items-center">
+              <span class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500">
+                <img src="../assets/Maintenance.png" alt="Deskripsi Ikon Anda" class="h-8 w-8 object-contain" />
+              </span>
+              <p class="ml-4 text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-semibold text-orange-500">
+                Dukungan dan Pemeliharaan IT
+              </p>
+            </dt>
+            <dd class="mt-2 ml-14 text-base text-slate-600 leading-relaxed">
+              Kami menyediakan layanan dukungan teknis dan pemeliharaan sistem berkelanjutan, memastikan infrastruktur IT klien berfungsi optimal.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Section 5 Team Member -->
+        <section class="py-16 md:py-20 lg:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:justify-between mb-12 md:mb-16">
+                    <div>
+                        <div
+                            class="inline-block bg-orange-500 px-6 py-3 rounded-r-full -ml-4 sm:-ml-6 lg:-ml-8 mb-4 lg:mb-0">
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+                                OUR TEAM
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="mt-4 lg:mt-0 lg:ml-6 max-w-xl">
+                        <div class="bg-orange-500 p-4 rounded-md text-white text-sm leading-relaxed shadow-lg">
+                            Inspiring Change With Motivational Keynotes,
+                            Workshop, And Seminar For Future Leaders and
+                            Innovators. (Sesuaikan teks lengkapnya)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="team-card-image-wrapper mb-4">
+                            <img src="../assets/FotoMember.png" alt="Nama Manajer 1"
+                                class="w-full h-auto rounded-lg object-cover mx-auto" style="max-height: 320px" />
+                            <div
+                                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                                Growing Future Leader
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-900">
+                            <span class="text-orange-500 mr-1">&#9733;</span>Manager
+                        </h3>
+                        <p class="mt-1 text-sm text-orange-500 leading-relaxed">
+                            Improve well being, grow future leader, become
+                            the greatness human
+                        </p>
+                        <a href="#"
+                            class="mt-3 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-150">Find
+                            out more &rarr;</a>
+                    </div>
+                    <div class="text-center group">
+                        <div class="team-card-image-wrapper mb-4">
+                            <img src="../assets/FotoMember.png" alt="Nama Manajer 2"
+                                class="w-full h-auto rounded-lg object-cover mx-auto" style="max-height: 320px" />
+                            <div
+                                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                                Growing Future Leader
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-900">
+                            <span class="text-orange-500 mr-1">&#9733;</span>Manager
+                        </h3>
+                        <p class="mt-1 text-sm text-orange-500 leading-relaxed">
+                            Improve well being, grow future leader, become
+                            the greatness human
+                        </p>
+                        <a href="#"
+                            class="mt-3 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-150">Find
+                            out more &rarr;</a>
+                    </div>
+                    <div class="text-center group">
+                        <div class="team-card-image-wrapper mb-4">
+                            <img src="../assets/FotoMember.png" alt="Nama Manajer 3"
+                                class="w-full h-auto rounded-lg object-cover mx-auto" style="max-height: 320px" />
+                            <div
+                                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                                Growing Future Leader
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-900">
+                            <span class="text-orange-500 mr-1">&#9733;</span>Manager
+                        </h3>
+                        <p class="mt-1 text-sm text-orange-500 leading-relaxed">
+                            Improve well being, grow future leader, become
+                            the greatness human
+                        </p>
+                        <a href="#"
+                            class="mt-3 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-150">Find
+                            out more &rarr;</a>
+                    </div>
+                    <div class="text-center group">
+                        <div class="team-card-image-wrapper mb-4">
+                            <img src="../assets/FotoMember.png" alt="Nama Manajer 4"
+                                class="w-full h-auto rounded-lg object-cover mx-auto" style="max-height: 320px" />
+                            <div
+                                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white text-orange-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md whitespace-nowrap">
+                                Growing Future Leader
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-slate-900">
+                            <span class="text-orange-500 mr-1">&#9733;</span>Manager
+                        </h3>
+                        <p class="mt-1 text-sm text-orange-500 leading-relaxed">
+                            Improve well being, grow future leader, become
+                            the greatness human
+                        </p>
+                        <a href="#"
+                            class="mt-3 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-150">Find
+                            out more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 Why Choose Us -->
+        <section class="why-choose-us-bg text-white">
+            <div class="why-choose-us-overlay"></div>
+            <div class="why-choose-us-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16 items-center">
+                    <div class="lg:col-span-5 mb-10 lg:mb-0">
+                        <p class="text-sm uppercase tracking-wider text-gray-300">
+                            (What We Offer)
+                        </p>
+                        <h2 class="mt-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold !leading-tight">
+                            WHY CHOOSE US
+                        </h2>
+                    </div>
+                    <div class="lg:col-span-7 space-y-10">
+                        <div class="relative pl-16 border-b border-gray-600 pb-10">
+                            <div class="absolute left-0 top-0 flex items-start h-full">
+                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">01</span>
+                                <span class="block w-px h-full bg-gray-600"></span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                                INOVATION
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                                Improve well being, grow future leader,
+                                become the greatness human. Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum.
+                            </p>
+                        </div>
+                        <div class="relative pl-16 border-b border-gray-600 pb-10">
+                            <div class="absolute left-0 top-0 flex items-start h-full">
+                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">02</span>
+                                <span class="block w-px h-full bg-gray-600"></span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                                COLABORATION
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                                Improve well being, grow future leader,
+                                become the greatness human. Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum.
+                            </p>
+                        </div>
+                        <div class="relative pl-16 pt-0">
+                            {/* No border-bottom on last item */}
+                            <div class="absolute left-0 top-0 flex items-start">
+                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">03</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                                INTEGRITY
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                                Improve well being, grow future leader,
+                                become the greatness human. Lorem ipsum
+                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                                Lorem ipsum Lorem ipsum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Script untuk Header (Mobile Menu & User Dropdown)
+        const mobileMenuButton =
+            document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIconOpen = document.getElementById("menu-icon-open");
+        const menuIconClose = document.getElementById("menu-icon-close");
+
+        if (
+            mobileMenuButton &&
+            mobileMenu &&
+            menuIconOpen &&
+            menuIconClose
+        ) {
+            mobileMenuButton.addEventListener("click", () => {
+                const isExpanded =
+                    mobileMenuButton.getAttribute("aria-expanded") ===
+                    "true" || false;
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    String(!isExpanded)
+                );
+                mobileMenu.classList.toggle("hidden");
+                menuIconOpen.classList.toggle("hidden");
+                menuIconClose.classList.toggle("hidden");
+            });
+        }
+
+        const desktopUserArea =
+            document.getElementById("desktop-user-area");
+        const mobileUserArea = document.getElementById("mobile-user-area");
+        const userDropdownMenuTemplate = document.getElementById(
+            "user-dropdown-menu-template"
+        );
+        const isLoggedIn = false; // Ganti ke true untuk simulasi login
+
+        function renderHeaderUserArea() {
+            if (!desktopUserArea || !mobileUserArea) return;
+
+            if (isLoggedIn) {
+                desktopUserArea.innerHTML = `
+        <span class="text-sm font-medium text-slate-700">Nama Pengguna</span>
+        <button type="button" class="ml-3 flex-shrink-0 bg-orange-500 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 items-center justify-center h-10 w-10 overflow-hidden" id="user-menu-button-desktop-active" aria-expanded="false" aria-haspopup="true">
+          <span class="sr-only">Buka menu pengguna</span>
+          <div class="text-white font-semibold flex flex-col items-center justify-center">
+            <span class="text-10px leading-11px pt-[1px]">img</span>
+            <span class="text-10px leading-11px pb-[1px]">profil</span>
+          </div>
+        </button>
+      `;
+
+                if (userDropdownMenuTemplate) {
+                    const userDropdownMenu =
+                        userDropdownMenuTemplate.cloneNode(true);
+                    userDropdownMenu.id = "user-dropdown-menu-active";
+                    userDropdownMenu.style.display = "";
+                    userDropdownMenu.classList.add("hidden");
+                    desktopUserArea.appendChild(userDropdownMenu);
+
+                    const newUserMenuButtonDesktop =
+                        document.getElementById(
+                            "user-menu-button-desktop-active"
+                        );
+                    const newUserDropdownMenu = document.getElementById(
+                        "user-dropdown-menu-active"
+                    );
+
+                    if (newUserMenuButtonDesktop && newUserDropdownMenu) {
+                        newUserMenuButtonDesktop.addEventListener(
+                            "click",
+                            (event) => {
+                                event.stopPropagation();
+                                const isExpanded =
+                                    newUserMenuButtonDesktop.getAttribute(
+                                        "aria-expanded"
+                                    ) === "true" || false;
+                                newUserMenuButtonDesktop.setAttribute(
+                                    "aria-expanded",
+                                    String(!isExpanded)
+                                );
+                                newUserDropdownMenu.classList.toggle(
+                                    "hidden"
+                                );
+                            }
+                        );
+                        document.addEventListener("click", (event) => {
+                            if (
+                                newUserMenuButtonDesktop &&
+                                newUserDropdownMenu &&
+                                !newUserMenuButtonDesktop.contains(
+                                    event.target
+                                ) &&
+                                !newUserDropdownMenu.contains(
+                                    event.target
+                                ) &&
+                                !newUserDropdownMenu.classList.contains(
+                                    "hidden"
+                                )
+                            ) {
+                                newUserMenuButtonDesktop.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+                                newUserDropdownMenu.classList.add("hidden");
+                            }
+                        });
+                    }
+                }
+
+                // Perbaikan: Hapus backslash yang tidak perlu dan pastikan template literal ditutup dengan benar
+                mobileUserArea.innerHTML = `
+        <div class="flex items-center px-4 mb-3">
+          <div class="flex-shrink-0">
+            <div class="h-10 w-10 rounded-full bg-orange-500 flex flex-col items-center justify-center text-white font-semibold overflow-hidden">
+              <span class="text-10px leading-11px pt-[1px]">img</span>
+              <span class="text-10px leading-11px pb-[1px]">profil</span>
+            </div>
+          </div>
+          <div class="ml-3">
+            <div class="text-base font-medium text-slate-800">Nama Pengguna</div>
+          </div>
+        </div>
+        <div class="px-2 space-y-1">
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-orange-50 hover:text-orange-500">Profil Anda</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-orange-50 hover:text-orange-500">Pengaturan</a>
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:bg-orange-50 hover:text-orange-500">Keluar</a>
+        </div>
+      `; // Backtick penutup ada di sini, tanpa backslash sebelum
+            } else {
+                // Tampilan Logged Out
+                // Perbaikan: Hapus backslash yang tidak perlu
+                desktopUserArea.innerHTML = `
+        <a href="login.html" class="inline-flex items-center justify-center px-4 lg:px-5 py-2 border border-orange-500 text-sm font-medium rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-150 ease-in-out shadow-sm">
+          Masuk
+        </a>
+      `; // Backtick penutup ada di sini
+
+                // Perbaikan: Hapus backslash yang tidak perlu
+                mobileUserArea.innerHTML = `
+        <div class="px-4">
+          <a href="login.html" class="w-full block text-center px-5 py-2 border border-orange-500 text-base font-medium rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-150 ease-in-out shadow-sm">
+            Masuk
+          </a>
+        </div>
+      `; // Backtick penutup ada di sini
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", renderHeaderUserArea);
+    </script>
+</body>
+
+</html>
