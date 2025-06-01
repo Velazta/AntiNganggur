@@ -16,6 +16,12 @@
             color: #374151;
             /* Default text color (gray-700) */
         }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
     </style>
 </head>
 
@@ -30,32 +36,32 @@
                         <img class="h-8 sm:h-9 w-auto" src="../assets/Vector.png" alt="AntiNganggur Logo" />
                         <div class="ml-2">
                             <span class="font-bold text-lg sm:text-xl text-slate-800">Anti</span><span
-                                class="font-bold text-lg sm:text-xl text-orange-500">Nganggur</span>
+                                class="font-bold text-lg sm:text-xl text-[#FF7144]">Nganggur</span>
                         </div>
                     </a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-2 lg:space-x-4">
                     <a href="index.html"
-                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Home</a>
+                        class="text-slate-700 hover:text-[#FF7144] px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Home</a>
                     <a href="#"
-                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Lowongan</a>
+                        class="text-slate-700 hover:text-[#FF7144] px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Lowongan</a>
                     <a href="aboutus.html"
-                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Tentang</a>
+                        class="text-slate-700 hover:text-[#FF7144] px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Tentang</a>
                     <a href="#"
-                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Portfolio</a>
+                        class="text-slate-700 hover:text-[#FF7144] px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Portfolio</a>
                     <a href="contact.html"
-                        class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Kontak</a>
+                        class="text-slate-700 hover:text-[#FF7144] px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Kontak</a>
                 </nav>
                 <div class="hidden md:flex items-center">
                     <a href="login.html"
-                        class="ml-6 inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-orange-500 text-[15px] font-semibold rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-200 ease-in-out shadow-sm">
+                        class="ml-6 inline-flex items-center justify-center px-5 lg:px-6 py-2.5 border-2 border-[#FF7144] text-[15px] font-semibold rounded-lg text-[#FF7144] bg-white hover:bg-[#FF7144] hover:text-white transition-colors duration-200 ease-in-out shadow-sm">
                         Masuk
                     </a>
                 </div>
                 <!-- Tombol Mobile Menu -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-button" type="button"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-orange-500 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-[#FF7144] hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#FF7144]"
                         aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Buka menu utama</span>
                         <svg id="menu-icon-open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -75,20 +81,20 @@
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#"
-                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    class="text-slate-700 hover:bg-orange-50 hover:text-[#FF7144] block px-3 py-2 rounded-md text-base font-medium">Home</a>
                 <a href="#"
-                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Lowongan</a>
+                    class="text-slate-700 hover:bg-orange-50 hover:text-[#FF7144] block px-3 py-2 rounded-md text-base font-medium">Lowongan</a>
                 <a href="#"
-                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
+                    class="text-slate-700 hover:bg-orange-50 hover:text-[#FF7144] block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
                 <a href="#"
-                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                    class="text-slate-700 hover:bg-orange-50 hover:text-[#FF7144] block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
                 <a href="#"
-                    class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+                    class="text-slate-700 hover:bg-orange-50 hover:text-[#FF7144] block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200">
                 <div class="px-5">
                     <a href="login.html"
-                        class="block w-full text-center px-5 py-2.5 border-2 border-orange-500 text-base font-semibold rounded-lg text-orange-500 bg-white hover:bg-orange-500 hover:text-white transition-colors duration-200 ease-in-out">
+                        class="block w-full text-center px-5 py-2.5 border-2 border-[#FF7144] text-base font-semibold rounded-lg text-[#FF7144] bg-white hover:bg-[#FF7144] hover:text-white transition-colors duration-200 ease-in-out">
                         Masuk
                     </a>
                 </div>
@@ -108,13 +114,13 @@
                 <!-- Main Title 1 -->
                 <h1 class="text-4xl sm:text-6xl font-bold leading-tight tracking-tight text-slate-800">Get Ready</h1>
                 <!-- Main Title 2 -->
-                <h2 class="text-4xl sm:text-6xl font-bold text-orange-500 leading-tight tracking-tight mt-1 sm:mt-2">
+                <h2 class="text-4xl sm:text-6xl font-bold text-[#FF7144] leading-tight tracking-tight mt-1 sm:mt-2">
                     With Us
                 </h2>
             </div>
 
             <!-- Main Content Container: Grid with 2 columns on lg and above -->
-            <div class="relative lg:grid lg:grid-cols-2 lg:gap-x-10 xl:gap-x-12">
+            <div class="relative lg:grid lg:grid-cols-2 lg:gap-x-10 xl:gap-x-12 lg:mb-10">
 
                 <!-- Left Content: Info Boxes + Social Media Buttons -->
                 <div class="relative z-10 flex flex-col">
@@ -128,7 +134,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-700 mb-1 text-lg">Location</h3>
-                                <p class="text-orange-500 leading-relaxed text-base">
+                                <p class="text-[#FF7144] leading-relaxed text-base">
                                     Jalan Ir. Sutami 36-A, Kentingan, Jebres, Surakarta, Jawa Tengah, Indonesia 57126
                                 </p>
                             </div>
@@ -141,7 +147,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-700 mb-1 text-lg">Contact Person</h3>
-                                <p class="text-orange-500 leading-relaxed text-base">+62 812 1950 0363</p>
+                                <p class="text-[#FF7144] leading-relaxed text-base">+62 812 1950 0363</p>
                             </div>
                         </div>
 
@@ -152,7 +158,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-gray-700 mb-1 text-lg">Working Hours</h3>
-                                <p class="text-orange-500 leading-relaxed text-base">Senin - Sabtu: 07:00 - 18:00</p>
+                                <p class="text-[#FF7144] leading-relaxed text-base">Senin - Sabtu: 07:00 - 18:00</p>
                             </div>
                         </div>
                     </div>
@@ -160,17 +166,17 @@
                     <!-- Social Media Buttons Container -->
                     <div class="flex flex-wrap items-center gap-4 sm:gap-6 mt-10 md:mt-12">
                         <a href="https://instagram.com" target="_blank" rel="noopener"
-                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-orange-500 hover:text-orange-600 transition duration-300 text-sm">
+                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-[#FF7144] hover:text-orange-600 transition duration-300 text-sm">
                             <img src="../assets/Instagram.png" alt="Instagram" class="w-5 h-5" />
                             <span class="font-semibold uppercase tracking-wider">Instagram</span>
                         </a>
                         <a href="https://wa.me/6281219500363" target="_blank" rel="noopener"
-                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-orange-500 hover:text-orange-600 transition duration-300 text-sm">
+                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-[#FF7144] hover:text-orange-600 transition duration-300 text-sm">
                             <img src="../assets/WhatsApp.png" alt="WhatsApp" class="w-5 h-5" />
                             <span class="font-semibold uppercase tracking-wider">WhatsApp</span>
                         </a>
                         <a href="https://github.com/username" target="_blank" rel="noopener"
-                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-orange-500 hover:text-orange-600 transition duration-300 text-sm">
+                            class="flex items-center gap-2 border border-gray-400 rounded-lg py-2.5 px-4 text-gray-700 hover:bg-orange-100 hover:border-[#FF7144] hover:text-orange-600 transition duration-300 text-sm">
                             <img src="../assets/GitHub.png" alt="GitHub" class="w-5 h-5" />
                             <span class="font-semibold uppercase tracking-wider">GitHub</span>
                         </a>
@@ -178,7 +184,7 @@
                 </div>
 
                 <!-- Right Content: Google Map Embed Container -->
-                <div class="rounded-2xl border-4 sm:border-8 border-orange-500
+                <div class="rounded-2xl border-4 sm:border-8 border-[#FF7144]
                 shadow-xl overflow-hidden relative
                 w-full h-[300px] mt-12
                 sm:h-[350px]
@@ -197,6 +203,60 @@
         </section>
 
         <!-- Section 2 -->
+        <section class="bg-[#F9D066] py-12 sm:py-16 md:py-18 relative overflow-hidden">
+
+            <div
+                class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-20 h-full">
+
+                <!-- Image kiri -->
+                <div
+                    class="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-1/2 lg:max-w-none self-center lg:self-stretch">
+
+                    <div class="absolute bottom-0 left-0 right-0 mx-auto lg:relative lg:mx-0 lg:bottom-auto">
+                        <img src="../assets/girlcontact.png" alt="Contact Girl"
+                            class="w-full h-auto object-contain lg:transform lg:translate-y-[80px]" />
+
+                    </div>
+                </div>
+
+                <!-- Form kanan -->
+                <div
+                    class="bg-white rounded-xl shadow-xl p-6 sm:p-8 md:p-10 w-full lg:w-1/2 max-w-md lg:max-w-lg mx-auto lg:mx-0 mb-0 lg:mb-0">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4 sm:mb-6">Hubungi Kami Sekarang</h2>
+                    <p class="mb-6 sm:mb-8 text-gray-700 leading-relaxed text-sm sm:text-base">
+                        Kami senang membantu Anda dengan pertanyaan Anda! Silahkan isi formulir di bawah ini dan kami
+                        akan segera menghubungi Anda kembali.
+                    </p>
+                    <form>
+                        <div class="mb-5">
+                            <label for="name" class="block text-slate-700 font-semibold mb-1.5 text-sm">Nama</label>
+                            <input type="text" id="name" name="name" placeholder="Nama Anda"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-400 text-sm" />
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="email" class="block text-slate-700 font-semibold mb-1.5 text-sm">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email Anda"
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-400 text-sm" />
+                        </div>
+
+                        <div class="mb-6 sm:mb-8">
+                            <label for="message" class="block text-slate-700 font-semibold mb-1.5 text-sm">Pesan</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tulis pesan anda disini..."
+                                class="w-full px-4 py-2.5 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400 placeholder-gray-400 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-base">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
 
     <script>

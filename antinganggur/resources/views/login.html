@@ -1,112 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>LOGIN</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="..\css\login.css" />
-    </head>
 
-    <body class="min-h-screen flex items-center justify-center p-4">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="..\css\login.css" />
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden max-w-5xl w-full my-8">
         <div
-            class="bg-white rounded-2xl shadow-2xl flex flex-col lg:flex-row overflow-hidden max-w-5xl w-full my-8"
-        >
-            <div
-                class="lg:w-1/2 bg-gradient-to-br from-[#FF8C42] via-[#FF6B6B] to-[#FF4B8D] px-8 pt-8 pb-0 sm:px-10 sm:pt-10 sm:pb-0 md:px-12 md:pt-12 md:pb-0 flex flex-col justify-end items-center relative min-h-[300px] lg:min-h-0"
-            >
-                <img
-                    src="..\assets\Girl.png"
-                    alt="Ilustrasi wanita memegang kalender"
-                    class="max-w-[320px] sm:max-w-[380px] md:max-w-sm lg:max-w-md z-10"
-                />
-            </div>
+            class="lg:w-1/2 bg-gradient-to-br from-[#FF8C42] via-[#FF6B6B] to-[#FF4B8D] px-8 pt-8 pb-0 sm:px-10 sm:pt-10 sm:pb-0 md:px-12 md:pt-12 md:pb-0 flex flex-col justify-end items-center relative min-h-[300px] lg:min-h-0">
+            <img src="..\assets\Girl.png" alt="Ilustrasi wanita memegang kalender"
+                class="max-w-[320px] sm:max-w-[380px] md:max-w-sm lg:max-w-md z-10" />
+        </div>
 
-            <div class="lg:w-1/2 p-8 sm:p-10 md:p-12 lg:p-16">
-                <div class="flex justify-end w-full mb-6">
-                    <div class="flex items-center">
-                        <img
-                            src="..\assets\Vector.png"
-                            alt="Logo AntiNganggur"
-                            class="h-8 w-auto mr-2"
-                        />
-                        <div>
-                            <span class="text-xl font-bold text-gray-800"
-                                >Anti</span
-                            ><span class="text-xl font-bold text-[#FF7144]"
-                                >Nganggur</span
-                            >
-                        </div>
+        <div class="lg:w-1/2 p-8 sm:p-10 md:p-12 lg:p-16">
+            <div class="flex justify-end w-full mb-6">
+                <div class="flex items-center">
+                    <img src="..\assets\Vector.png" alt="Logo AntiNganggur" class="h-8 w-auto mr-2" />
+                    <div>
+                        <span class="text-xl font-bold text-gray-800">Anti</span><span
+                            class="text-xl font-bold text-[#FF7144]">Nganggur</span>
                     </div>
                 </div>
-                <h1 class="text-3xl font-semibold text-gray-800 mb-8">
-                    Sign In
-                </h1>
-
-                <form action="#" method="POST">
-                    <div class="mb-6">
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="Enter your email"
-                            class="input-field"
-                            required
-                        />
-                    </div>
-                    <div class="mb-6">
-                        <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="Enter your password"
-                            class="input-field"
-                            required
-                        />
-                    </div>
-
-                    <div class="flex items-center justify-between mb-8 text-sm">
-                        <div class="flex items-center">
-                            <input
-                                type="checkbox"
-                                name="remember"
-                                id="remember"
-                                class="custom-checkbox focus:ring-0 focus:ring-offset-0"
-                            />
-                            <label
-                                for="remember"
-                                class="ml-2 text-gray-600 cursor-pointer"
-                                >Remember me</label
-                            >
-                        </div>
-                        <a
-                            href="#"
-                            class="font-medium text-gray-600 hover:text-[#FF4B8D] transition-colors duration-200"
-                            >Forgot Password</a
-                        >
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="w-full bg-gradient-to-r from-[#FF8C42] via-[#FF637B] to-[#FF4B8D] text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF637B] transition-all duration-300"
-                    >
-                        Sign In
-                    </button>
-                </form>
-
-                <p class="mt-8 text-center text-sm text-gray-600">
-                    Don't have an account?
-                    <a
-                        href="signup.html"
-                        class="font-semibold text-[#FF7144] hover:text-[#FF4B8D] transition-colors duration-200"
-                        >Sign Up</a
-                    >
-                </p>
             </div>
+            <h1 class="text-3xl font-semibold text-gray-800 mb-8">
+                Sign In
+            </h1>
+
+            <form action="#" method="POST">
+                <div class="mb-6">
+                    <input type="email" name="email" id="email" placeholder="Enter your email" class="input-field"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <input type="password" name="password" id="password" placeholder="Enter your password"
+                        class="input-field" required />
+                </div>
+
+                <div class="flex items-center justify-between mb-8 text-sm">
+                    <div class="flex items-center">
+                        <input type="checkbox" name="remember" id="remember"
+                            class="custom-checkbox focus:ring-0 focus:ring-offset-0" />
+                        <label for="remember" class="ml-2 text-gray-600 cursor-pointer">Remember me</label>
+                    </div>
+                    <a href="#"
+                        class="font-medium text-gray-600 hover:text-[#FF4B8D] transition-colors duration-200">Forgot
+                        Password</a>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-[#FF8C42] via-[#FF637B] to-[#FF4B8D] text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF637B] transition-all duration-300">
+                    Sign In
+                </button>
+            </form>
+
+            <p class="mt-8 text-center text-sm text-gray-600">
+                Don't have an account?
+                <a href="signup.html"
+                    class="font-semibold text-[#FF7144] hover:text-[#FF4B8D] transition-colors duration-200">Sign Up</a>
+            </p>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
