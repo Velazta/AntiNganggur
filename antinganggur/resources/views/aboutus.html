@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang Kami - AntiNganggur</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
     <style>
         body {
@@ -156,29 +156,41 @@
             text-align: right;
         }
 
-        /* Latar belakang dan overlay untuk section "Why Choose Us" */
-        .why-choose-us-bg {
-            /* Ganti dengan path gambar Anda yang sebenarnya */
-            background-image: url("../assets/section6-bg.jpg");
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        /* Overlay untuk background */
+        .overlay-dark {
+            background-color: rgba(20, 20, 40, 0.7);
         }
 
-        .why-choose-us-overlay {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(20,
-                    20,
-                    40,
-                    0.7);
-            /* Overlay lebih gelap agar teks putih lebih kontras */
-            z-index: 1;
+        /* Animasi fadeIn saat scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .why-choose-us-content {
-            position: relative;
-            z-index: 2;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Number box diper kecilkan */
+        .number-box {
+            width: 2.5rem;
+            /* lebih kecil */
+            height: 2.5rem;
+            font-size: 1rem;
+            /* teks lebih kecil */
+        }
+
+        .content-item .number-box,
+        .content-item .title-left {
+            transition: transform 0.5s ease;
+            /* slow 1 detik */
+        }
+
+        .content-item:hover .number-box,
+        .content-item:hover .title-left {
+            transform: translateX(200px);
         }
     </style>
 </head>
@@ -207,7 +219,7 @@
                         class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Tentang</a>
                     <a href="#"
                         class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Portfolio</a>
-                    <a href="#"
+                    <a href="contact.html"
                         class="text-slate-700 hover:text-orange-500 px-3 py-2 rounded-md text-[15px] font-medium transition-colors duration-150">Kontak</a>
                 </nav>
                 <div class="hidden md:flex items-center">
@@ -246,7 +258,7 @@
                     class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
                 <a href="#"
                     class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-                <a href="#"
+                <a href="contact.html"
                     class="text-slate-700 hover:bg-orange-50 hover:text-orange-500 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200">
@@ -345,8 +357,8 @@
         <section class="pt-16 pb-20 md:pt-24 md:pb-32 lg:pb-40 lg:pt-40">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 md:mb-16">
-                    <div class="inline-block bg-orange-500 px-8 py-3 rounded-lg shadow-md mb-4">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-wide">
+                    <div class="inline-block bg-orange-500 px-8 py-3 shadow-md mb-4">
+                        <h2 class="text-2xl sm:text-4xl font-bold text-white tracking-wide">
                             VISI MISI
                         </h2>
                     </div>
@@ -367,7 +379,7 @@
                                 VISI
                             </h3>
                         </div>
-                        <p class="text-slate-600 leading-relaxed text-justify">
+                        <p class="text-slate-600 leading-relaxed text-justify ">
                             Menjadi katalisator utama dalam menciptakan
                             ekosistem teknologi Indonesia yang inklusif,
                             inovatif, dan berkelanjutan, di mana setiap
@@ -549,9 +561,45 @@
 
                             <!-- Overlay Text, juga absolute di bawah container dan di atas gambar -->
                             <div
+                                class="absolute left-4  bottom-4 bg-black bg-opacity-60 px-3 py-1 rounded-md shadow-md inline-block text-white text-sm font-semibold leading-snug">
+                                <p>Ravelin Lutfhan</p>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mt-6 max-w-[240px] text-center sm:text-left">
+                            <!-- Row icon & title -->
+                            <div class="flex items-center justify-center sm:justify-start mb-2">
+                                <img src="../assets/Star.png" alt="Star Icon" class="w-5 h-5 mr-2 flex-shrink-0" />
+                                <span class="text-[30px] font-medium text-black">Manager</span>
+                            </div>
+                            <!-- Description text -->
+                            <p class="text-orange-500 leading-relaxed mb-4 text-justify text-[20px]">
+                                Improve well being, grow future leader, become the greatness human
+                            </p>
+                            <!-- Link -->
+                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">
+                                Find out more &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card Example -->
+                    <div class="flex flex-col items-center">
+                        <!-- Card Container (background orange, rounded, shadow) -->
+                        <div class="relative w-[240px] h-[260px]">
+                            <!-- Background container orange -->
+                            <div class="bg-orange-500 rounded-3xl shadow-lg w-full h-full"></div>
+
+                            <!-- Image dengan posisi absolute agak ke tengah dan ke atas supaya keluar dari container -->
+                            <img src="../assets/FotoMember.png" alt="Team Member"
+                                class="absolute left-1/2 bottom-0 w-auto h-[320px] object-cover rounded-3xl drop-shadow-lg transform -translate-x-1/2" />
+
+                            <!-- Overlay Text, juga absolute di bawah container dan di atas gambar -->
+                            <div
                                 class="absolute left-4 bottom-4 bg-black bg-opacity-60 px-3 py-1 rounded-md shadow-md inline-block text-white text-sm font-semibold leading-snug">
-                                <p>Growing Future</p>
-                                <p class="mt-1">Leader</p>
+                                <p>Rizky Amalia</p>
+                                <!-- <p class="mt-1">Lutfhan</p> -->
                             </div>
                         </div>
 
@@ -646,112 +694,90 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Card Example -->
-                    <div class="flex flex-col items-center">
-                        <!-- Card Container (background orange, rounded, shadow) -->
-                        <div class="relative w-[240px] h-[260px]">
-                            <!-- Background container orange -->
-                            <div class="bg-orange-500 rounded-3xl shadow-lg w-full h-full"></div>
-
-                            <!-- Image dengan posisi absolute agak ke tengah dan ke atas supaya keluar dari container -->
-                            <img src="../assets/FotoMember.png" alt="Team Member"
-                                class="absolute left-1/2 bottom-0 w-auto h-[320px] object-cover rounded-3xl drop-shadow-lg transform -translate-x-1/2" />
-
-                            <!-- Overlay Text, juga absolute di bawah container dan di atas gambar -->
-                            <div
-                                class="absolute left-4 bottom-4 bg-black bg-opacity-60 px-3 py-1 rounded-md shadow-md inline-block text-white text-sm font-semibold leading-snug">
-                                <p>Growing Future</p>
-                                <p class="mt-1">Leader</p>
-                            </div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="mt-6 max-w-[240px] text-center sm:text-left">
-                            <!-- Row icon & title -->
-                            <div class="flex items-center justify-center sm:justify-start mb-2">
-                                <img src="../assets/Star.png" alt="Star Icon" class="w-5 h-5 mr-2 flex-shrink-0" />
-                                <span class="text-[30px] font-medium text-black">Manager</span>
-                            </div>
-                            <!-- Description text -->
-                            <p class="text-orange-500 leading-relaxed mb-4 text-justify text-[20px]">
-                                Improve well being, grow future leader, become the greatness human
-                            </p>
-                            <!-- Link -->
-                            <a href="#" class="text-blue-600 font-semibold hover:underline text-sm">
-                                Find out more &rarr;
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Copy Card sesuai jumlah anggota tim -->
-                    <!-- Reuse div.flex.flex-col.items-center untuk anggota lainnya -->
 
                 </div>
             </div>
         </section>
 
         <!-- Section 6 Why Choose Us -->
-        <section class="why-choose-us-bg text-white">
-            <div class="why-choose-us-overlay"></div>
-            <div class="why-choose-us-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-                <div class="lg:grid lg:grid-cols-12 lg:gap-x-12 xl:gap-x-16 items-center">
-                    <div class="lg:col-span-5 mb-10 lg:mb-0">
-                        <p class="text-sm uppercase tracking-wider text-gray-300">
+        <section class="relative min-h-screen bg-center bg-cover flex items-center justify-center text-white"
+            style="background-image: url('../assets/BackgroundOffer.png');">
+            <div class="absolute inset-0 bg-black bg-opacity-40 z-0"></div>
+
+            <div class="relative z-10 w-full max-w-full px-4 sm:px-8 md:px-20 lg:px-60 py-20">
+
+                <div class="mb-16">
+                    <div class="-ml-6">
+                        <p class="text-gray-400 uppercase tracking-wider mb-2 text-sm sm:text-base">
                             (What We Offer)
                         </p>
-                        <h2 class="mt-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold !leading-tight">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                             WHY CHOOSE US
-                        </h2>
+                        </h1>
                     </div>
-                    <div class="lg:col-span-7 space-y-10">
-                        <div class="relative pl-16 border-b border-gray-600 pb-10">
-                            <div class="absolute left-0 top-0 flex items-start h-full">
-                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">01</span>
-                                <span class="block w-px h-full bg-gray-600"></span>
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
-                                INOVATION
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                                Improve well being, grow future leader,
-                                become the greatness human. Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum.
-                            </p>
+                </div>
+
+                <div class="space-y-10">
+                    <!-- Item 1 -->
+                    <div
+                        class="content-item grid grid-cols-1 sm:grid-cols-12 items-center fade-in border-b border-white pb-8 gap-x-1 cursor-pointer">
+                        <!-- Number box -->
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-1 sm:p-2 font-bold tracking-wide -ml-1 sm:-ml-2 transition-transform duration-300 ease-in-out"
+                            style="min-width: 2rem; min-height: 2rem; font-size: 0.85rem;">
+                            01
                         </div>
-                        <div class="relative pl-16 border-b border-gray-600 pb-10">
-                            <div class="absolute left-0 top-0 flex items-start h-full">
-                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">02</span>
-                                <span class="block w-px h-full bg-gray-600"></span>
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
-                                COLABORATION
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                                Improve well being, grow future leader,
-                                become the greatness human. Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum.
-                            </p>
+                        <!-- title left -->
+                        <div
+                            class="title-left col-span-11 sm:col-span-5 mt-2 sm:mt-0 text-2xl sm:text-5xl font-extralight tracking-wide pl-0 text-center sm:text-left transition-transform duration-300 ease-in-out">
+                            INOVATION
                         </div>
-                        <div class="relative pl-16 pt-0">
-                            {/* No border-bottom on last item */}
-                            <div class="absolute left-0 top-0 flex items-start">
-                                <span class="text-3xl sm:text-4xl font-bold text-orange-400 mr-4 mt-[-2px]">03</span>
-                            </div>
-                            <h3 class="text-2xl sm:text-3xl font-bold mb-3">
-                                INTEGRITY
-                            </h3>
-                            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
-                                Improve well being, grow future leader,
-                                become the greatness human. Lorem ipsum
-                                Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                                ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                                Lorem ipsum Lorem ipsum.
-                            </p>
+                        <!-- Description -->
+                        <div
+                            class="col-span-11 sm:col-span-6 mt-2 sm:mt-0 text-gray-300 text-sm sm:text-base leading-relaxed pl-20 text-justify">
+                            Kami berkomitmen untuk terus berinovasi dalam menyediakan solusi teknologi yang mutakhir.
+                            Dengan memanfaatkan teknologi terbaru,
+                            kami menciptakan produk dan layanan yang tidak hanya memenuhi kebutuhan klien tetapi juga
+                            mendorong pertumbuhan dan efisiensi dalam industri IT
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div
+                        class="content-item grid grid-cols-1 sm:grid-cols-12 items-center fade-in border-b border-white pb-8 gap-x-1 cursor-pointer">
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-1 sm:p-2 font-bold tracking-wide -ml-1 sm:-ml-2 transition-transform duration-300 ease-in-out"
+                            style="min-width: 2rem; min-height: 2rem; font-size: 0.85rem;">
+                            02
+                        </div>
+                        <div
+                            class="title-left col-span-11 sm:col-span-5 mt-2 sm:mt-0 text-2xl sm:text-5xl font-extralight tracking-wide pl-0 text-center sm:text-left transition-transform duration-300 ease-in-out">
+                            COLABORATION
+                        </div>
+                        <div
+                            class="col-span-11 sm:col-span-6 mt-2 sm:mt-0 text-gray-300 text-sm sm:text-base leading-relaxed pl-20 text-justify">
+                            Kami percaya bahwa kolaborasi adalah kunci untuk mencapai hasil yang luar biasa.
+                            Dengan menjalin kemitraan yang kuat antara perusahaan dan kandidat,
+                            kami menciptakan sinergi yang saling menguntungkan dan memastikan bahwa setiap pihak
+                            mendapatkan manfaat maksimal.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div
+                        class="content-item grid grid-cols-1 sm:grid-cols-12 items-center fade-in border-b border-white pb-8 gap-x-1 cursor-pointer">
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-1 sm:p-2 font-bold tracking-wide -ml-1 sm:-ml-2 transition-transform duration-300 ease-in-out"
+                            style="min-width: 2rem; min-height: 2rem; font-size: 0.85rem;">
+                            03
+                        </div>
+                        <div
+                            class="title-left col-span-11 sm:col-span-5 mt-2 sm:mt-0 text-2xl sm:text-5xl font-extralight tracking-wide pl-0 text-center sm:text-left transition-transform duration-300 ease-in-out">
+                            INTEGRITY
+                        </div>
+                        <div
+                            class="col-span-11 sm:col-span-6 mt-2 sm:mt-0 text-gray-300 text-sm sm:text-base leading-relaxed pl-20 text-justify">
+                            Integritas adalah fondasi dari semua yang kami lakukan.
+                            Kami berkomitmen untuk memberikan informasi yang akurat dan transparan,
+                            serta menjaga kepercayaan klien dan kandidat kami. Dengan pendekatan yang etis,
+                            kami memastikan bahwa setiap interaksi didasarkan pada kejujuran dan tanggung jawab.
                         </div>
                     </div>
                 </div>
@@ -908,6 +934,31 @@
         }
 
         document.addEventListener("DOMContentLoaded", renderHeaderUserArea);
+
+        // Fade in saat scroll
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.1, // Persentase elemen yang harus terlihat sebelum callback dipicu
+    // rootMargin: "0px 0px -50px 0px" // Anda bisa sesuaikan ini jika perlu
+};
+
+const appearOnScroll = new IntersectionObserver(function (entries, observer) { // Ganti nama parameter kedua
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Elemen masuk ke viewport atau sudah di viewport
+            entry.target.classList.add('visible');
+        } else {
+            // Elemen keluar dari viewport
+            entry.target.classList.remove('visible');
+            // Tidak perlu unobserve jika ingin animasi berulang
+        }
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
     </script>
 </body>
 

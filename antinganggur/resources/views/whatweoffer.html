@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - AntiNganggur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Overlay untuk background */
+        .overlay-dark {
+            background-color: rgba(20, 20, 40, 0.7);
+        }
+
+        /* Animasi fadeIn saat scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Number box diper kecilkan */
+        .number-box {
+            width: 2.5rem;
+            /* lebih kecil */
+            height: 2.5rem;
+            font-size: 1rem;
+            /* teks lebih kecil */
+        }
+    </style>
+</head>
+
+<body class="antialiased  text-white">
+    <main>
+
+        <!-- Section About Us -->
+        <section class="relative min-h-screen bg-center bg-cover flex items-center justify-center"
+            style="background-image: url('../assets/BackgroundOffer.png');">
+            <!-- Overlay gelap -->
+            <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-10 sm:px-16 lg:px-24 py-20">
+
+                <!-- Title -->
+                <div class="mb-16 max-w-4xl">
+                    <p class="text-gray-400 uppercase tracking-wider mb-2 pl-2"> <!-- padding kiri sedikit -->
+                        (What We Offer)
+                    </p>
+                    <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight pl-2">
+                        WHY CHOOSE US
+                    </h1>
+                </div>
+
+                <!-- Content box -->
+                <div class="space-y-10">
+
+                    <!-- Item 1 -->
+                    <div class="grid grid-cols-12 items-center fade-in border-b border-gray-600 pb-8">
+                        <!-- Number box -->
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-2 font-bold tracking-wide -ml-6"
+                            style="min-width: 2.5rem; min-height: 2.5rem; font-size: 1rem;">
+                            01
+                        </div>
+                        <!-- Title left -->
+                        <div class="col-span-5 text-4xl sm:text-5xl font-light tracking-wide pl-2">
+                            INOVATION
+                        </div>
+                        <!-- Description right -->
+                        <div class="col-span-6 text-gray-300 text-base sm:text-lg leading-relaxed pl-6">
+                            Improve well being, grow future leader, become the greatness human.
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                            ipsum Lorem ipsum Lorem ipsum.
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="grid grid-cols-12 items-center fade-in border-b border-gray-600 pb-8">
+                        <!-- Number box -->
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-2 font-bold tracking-wide -ml-6"
+                            style="min-width: 2.5rem; min-height: 2.5rem; font-size: 1rem;">
+                            02
+                        </div>
+                        <!-- Title left -->
+                        <div class="col-span-5 text-4xl sm:text-5xl font-light tracking-wide pl-2">
+                            COLABORATION
+                        </div>
+                        <!-- Description right -->
+                        <div class="col-span-6 text-gray-300 text-base sm:text-lg leading-relaxed pl-6">
+                            Improve well being, grow future leader, become the greatness human.
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                            ipsum Lorem ipsum Lorem ipsum.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="grid grid-cols-12 items-center fade-in pb-8">
+                        <!-- Number box -->
+                        <div class="number-box col-span-1 flex items-center justify-center border border-gray-500 rounded-lg p-2 font-bold tracking-wide -ml-6"
+                            style="min-width: 2.5rem; min-height: 2.5rem; font-size: 1rem;">
+                            03
+                        </div>
+                        <!-- Title left -->
+                        <div class="col-span-5 text-4xl sm:text-5xl font-light tracking-wide pl-2">
+                            INTEGRITY
+                        </div>
+                        <!-- Description right -->
+                        <div class="col-span-6 text-gray-300 text-base sm:text-lg leading-relaxed pl-6">
+                            Improve well being, grow future leader, become the greatness human.
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+                            ipsum Lorem ipsum Lorem ipsum.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Fade in saat scroll
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+
+</html>
